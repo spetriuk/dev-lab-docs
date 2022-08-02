@@ -8,7 +8,7 @@ steps:
   - name: dockersock
     path: /var/run/docker.sock
   commands:
-  - docker build -t spetriuk/mkdocs-material:latest
+  - docker build -t spetriuk/mkdocs-material:latest .
 
 - name: Build a site
   image: spetriuk/mkdocs-material:latest
