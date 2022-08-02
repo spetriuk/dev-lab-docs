@@ -2,24 +2,29 @@ kind: pipeline
 name: default
 
 steps:
-- name: Build a custom mkdocs Docker image
-  image: docker
-  volumes:
-  - name: dockersock
-    path: /var/run/docker.sock
-  commands:
-  - docker build -t spetriuk/mkdocs-material:latest .
-
 - name: Build a site
-  image: spetriuk/mkdocs-material:latest
+  image: squidfunk/mkdocs-material:latest
   pull: if-not-exists
   commands:
+  - pip install -U -r ./requirements.txt
   - mkdocs build
+  when:
+    event: push
+    branch: main
 
-- name: test
-  image: bash
-  commands:
-  - ls
+- name: publish-image
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PWD
+    tags:
+      - latest
+    repo: spetriuk/dev-lab-docs
+  when:
+    event: push
+    branch: main
 
 volumes:
 - name: dockersock
