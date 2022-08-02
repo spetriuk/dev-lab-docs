@@ -14,7 +14,7 @@ steps:
   image: spetriuk/mkdocs-material:latest
   pull: if-not-exists
   commands:
-  - build
+  - mkdocs build
 
 - name: test
   image: bash
