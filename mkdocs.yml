@@ -13,13 +13,9 @@ nav:
     - 'guides/longhorn.md'
     - 'guides/gitea.md'
     - 'guides/drone.md'
-    - 'guides/pihole-install.md'
     - 'guides/pihole-dns.md'
-    - 'guides/kuma.md'
-    - 'guides/portainer-install.md'
-    - 'guides/nginx-install.md'
+    - 'guides/portainer.md'
     - 'guides/nginx-configure.md'
-    - 'guides/home-assistant.md'
     - 'guides/mkdocs.md'
 
 theme:
