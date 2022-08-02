@@ -10,13 +10,13 @@ nav:
     - 'installation/services.md'
   - 'Guides':
     - 'guides/pxe.md'
-    - 'guides/longhorn.md'
-    - 'guides/gitea.md'
-    - 'guides/drone.md'
     - 'guides/pihole-dns.md'
     - 'guides/portainer.md'
     - 'guides/nginx-configure.md'
     - 'guides/mkdocs.md'
+    - 'guides/longhorn.md'
+    - 'guides/gitea.md'
+    - 'guides/drone.md'
 
 theme:
   name: material
