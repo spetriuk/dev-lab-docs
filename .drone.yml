@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+- name: Build a custom mkdocs Docker image
+  image: docker
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - docker build -t spetriuk/mkdocs-material:latest
+
+- name: Build a site
+  image: spetriuk/mkdocs-material:latest
+  pull: if-not-exists
+  commands:
+  - build
+
+- name: test
+  image: bash
+  commands:
+  - ls
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
