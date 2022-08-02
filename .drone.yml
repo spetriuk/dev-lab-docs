@@ -8,9 +8,6 @@ steps:
   commands:
   - pip install -U -r ./requirements.txt
   - mkdocs build
-  when:
-    event: push
-    branch: main
 
 - name: publish-image
   image: plugins/docker
@@ -22,9 +19,6 @@ steps:
     tags:
       - latest
     repo: spetriuk/dev-lab-docs
-  when:
-    event: push
-    branch: main
 
 volumes:
 - name: dockersock
