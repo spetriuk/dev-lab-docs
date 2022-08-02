@@ -1,0 +1,70 @@
+site_name: dev-lab docs
+repo_url: https://github.com/spetriuk/dev-lab-project
+edit_uri: ""
+nav:
+  - 'index.md'
+  - 'Installation':
+    - 'installation/hardware.md'
+    - 'installation/os.md'
+    - 'installation/infrastructure.md'
+    - 'installation/services.md'
+  - 'Guides':
+    - 'guides/pxe.md'
+    - 'guides/longhorn.md'
+    - 'guides/gitea.md'
+    - 'guides/drone.md'
+    - 'guides/pihole-install.md'
+    - 'guides/pihole-dns.md'
+    - 'guides/kuma.md'
+    - 'guides/portainer-install.md'
+    - 'guides/nginx-install.md'
+    - 'guides/nginx-configure.md'
+    - 'guides/home-assistant.md'
+    - 'guides/mkdocs.md'
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/git-alt
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+   # - navigation.sections
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences    
+      
+plugins:
+  - search:
+      lang: en
+  - markdownextradata: {}
+  
+extra:
+  repo:
+    url: https://github.com/spetriuk/dev-lab-project/tree/master
