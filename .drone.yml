@@ -29,7 +29,7 @@ steps:
     portainer_password:
       from_secret: PORTAINER_PASSWORD
     endpoint: server1
-    registry: https://registry.hub.docker.com
+    registry: docker-hub
     image: spetriuk/dev-lab-docs
     image_tag: latest
     stack_name: docs
