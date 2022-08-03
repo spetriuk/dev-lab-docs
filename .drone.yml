@@ -17,7 +17,7 @@ steps:
     password:
       from_secret: DOCKER_PWD
     tags:
-      - latest
+    - latest
     repo: spetriuk/dev-lab-docs
 
 - name: Deploy to dev-server
