@@ -35,6 +35,10 @@ steps:
     stack_name: docs
     standalone: false
 
+trigger:
+  branch:
+  - main
+
 volumes:
 - name: dockersock
   host:
