@@ -28,7 +28,7 @@ steps:
       from_secret: PORTAINER_USERNAME
     portainer_password:
       from_secret: PORTAINER_PASSWORD
-    endpoint: 3
+    endpoint: server1
 #    registry: <name of private registry>
     image: spetriuk/dev-lab-docs
     image_tag: latest
