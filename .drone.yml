@@ -12,7 +12,7 @@ steps:
 - name: Publish docker image
   image: plugins/docker
   settings:
-    registry: custom-registry
+    registry: 192.168.31.100:5000
 #    username:
 #      from_secret: DOCKER_USERNAME
 #    password:
