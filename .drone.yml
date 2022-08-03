@@ -9,7 +9,7 @@ steps:
   - pip install -U -r ./requirements.txt
   - mkdocs build
 
-- name: publish-image
+- name: Publish docker image
   image: plugins/docker
   settings:
     username:
@@ -19,6 +19,21 @@ steps:
     tags:
       - latest
     repo: spetriuk/dev-lab-docs
+
+- name: Deploy to dev-server
+  image: robkaandorp/drone-portainer
+  settings:
+    portainer_url: http://portainer.tinker.my
+    portainer_username:
+      from_secret: PORTAINER_USERNAME
+    portainer_password:
+      from_secret: PORTAINER_PASSWORD
+    endpoint: 3
+#    registry: <name of private registry>
+    image: spetriuk/dev-lab-docs
+    image_tag: latest
+    stack_name: docs
+    standalone: false
 
 volumes:
 - name: dockersock

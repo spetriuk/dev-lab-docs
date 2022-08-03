@@ -1,0 +1,8 @@
+version: "3"
+services:
+  dev-lab-docs:
+    image: $imageName
+    container_name: dev-lab-docs
+    restart: always
+    ports:
+      - 8077:80
