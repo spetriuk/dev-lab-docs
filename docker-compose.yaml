@@ -1,7 +1,7 @@
 version: "3"
 services:
   dev-lab-docs:
-    image: $imageName
+    image: spetriuk/dev-lab-docs:latest
     container_name: dev-lab-docs
     restart: always
     ports:

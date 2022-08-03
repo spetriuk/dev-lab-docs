@@ -11,12 +11,11 @@ steps:
 
 - name: Publish docker image
   image: plugins/docker
-  registry: 192.168.31.100:5000
-#  settings:
-#    username:
-#      from_secret: DOCKER_USERNAME
-#    password:
-#      from_secret: DOCKER_PWD
+  settings:
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PWD
     tags:
       - latest
     repo: spetriuk/dev-lab-docs
@@ -30,9 +29,9 @@ steps:
     portainer_password:
       from_secret: PORTAINER_PASSWORD
     endpoint: server1
-    registry: custom-registry
-    image: spetriuk/dev-lab-docs
-    image_tag: latest
+#    registry: custom-registry
+#    image: spetriuk/dev-lab-docs
+#    image_tag: latest
     stack_name: docs
     standalone: false
 
